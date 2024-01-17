@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: werf-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: werf-app
+  template:
+    metadata:
+      labels:
+        app: werf-app
+    spec:
+      imagePullSecrets:
+      - name: registrysecret
+      containers:
+      - name: app
+        image: {{ .Values.werf.image.app }}
+        ports:
+        - containerPort: 3000
