@@ -4,7 +4,7 @@ Training playground
 
 ### Prepare environment
 
-Firstly you need to install [minikube](https://kubernetes.io/ru/docs/tasks/tools/install-minikube/), [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) and [werf](https://ru.werf.io/documentation/v1.2/index.html).
+Firstly you need to install [microk8s](https://microk8s.io/#install-microk8s) and [werf](https://ru.werf.io/documentation/v1.2/index.html).
 
 After installing you need to create a secret named 'registrysecret':
 
@@ -19,5 +19,4 @@ $ kubectl create secret docker-registry registrysecret \
 
 ```bash
 $ werf converge --repo '<DOCKER HUB USERNAME>'/'<DOCKER HUB REPOSITORY>'
-$ minikube service werf-app -n werf-app
 ```
